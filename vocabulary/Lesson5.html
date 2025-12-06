@@ -28,6 +28,24 @@
 
     <style>
         html { scroll-behavior: smooth; }
+        .vocabulary-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vocabulary-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Custom scrollbar for RTL example blocks */
+        .rtl-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .rtl-scroll::-webkit-scrollbar-thumb {
+            background-color: #10b981; /* emerald-500 */
+            border-radius: 4px;
+        }
+        .rtl-scroll::-webkit-scrollbar-track {
+            background: #d1fae5; /* emerald-100 */
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-emerald-50 font-sans">
@@ -93,7 +111,8 @@
                     <h2 class="text-2xl font-bold text-gray-800 mb-3">Lesson Overview</h2>
                     <p class="text-gray-600 mb-4">
                         Welcome to Lesson 5: Food & Drinks. This lesson will help you master important concepts
-                        related to food & drinks in Arabic.
+                        related to ordering and discussing food & drinks in Arabic. Pay close attention to the sound of
+                        the words, especially the guttural letters.
                     </p>
                     <div class="flex flex-wrap gap-4 text-sm">
                         <div class="flex items-center gap-2">
@@ -109,62 +128,157 @@
             </div>
         </section>
 
-        <!-- Content Area -->
+        <!-- Content Area: Filled Vocabulary and Examples -->
         <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 class="text-3xl font-bold text-emerald-950 mb-6">Lesson Content</h2>
             
             <div class="prose max-w-none">
                 <p class="text-gray-700 text-lg mb-6">
-                    This section contains the main learning materials for Food & Drinks. 
-                    Study the content carefully and practice the exercises below.
+                    This module introduces the essential vocabulary for ordering food, discussing meals, and expressing preference. Memorizing these words is crucial for everyday conversations.
                 </p>
                 
-                <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 mb-6">
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 mb-8">
                     <h3 class="text-xl font-bold text-emerald-900 mb-3">
-                        <i class="fa-solid fa-star text-gold-500 mr-2"></i>
-                        Key Learning Points
+                        <i class="fa-solid fa-utensils text-gold-500 mr-2"></i>
+                        Core Vocabulary: Al-Taa'am wa Al-Mashrubat (الطعام والمشروبات)
                     </h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li><i class="fa-solid fa-check-circle text-emerald-600 mr-2"></i> Understanding Food & Drinks</li>
-                        <li><i class="fa-solid fa-check-circle text-emerald-600 mr-2"></i> Practical applications</li>
-                        <li><i class="fa-solid fa-check-circle text-emerald-600 mr-2"></i> Common examples and usage</li>
-                    </ul>
+                    <p class="text-gray-700">
+                        The table below lists common foods, drinks, and useful related phrases.
+                    </p>
                 </div>
 
+                <!-- Vocabulary Grid -->
+                <div class="grid md:grid-cols-3 gap-4 mb-10">
+                    <!-- Column 1: Food Basics -->
+                    <div class="col-span-1 p-4 bg-emerald-50 rounded-lg shadow-inner">
+                        <h4 class="text-xl font-bold text-emerald-700 mb-3 border-b pb-2 border-emerald-200">
+                            <i class="fa-solid fa-bread-slice mr-2"></i> Foods (طعام)
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">خبز</p>
+                                <p class="text-sm text-gray-500">Khubz</p>
+                                <p class="font-semibold text-gray-700">Bread</p>
+                            </div>
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">لحم</p>
+                                <p class="text-sm text-gray-500">Lahm</p>
+                                <p class="font-semibold text-gray-700">Meat</p>
+                            </div>
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">دجاج</p>
+                                <p class="text-sm text-gray-500">Dajaj</p>
+                                <p class="font-semibold text-gray-700">Chicken</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: More Foods & Drinks -->
+                    <div class="col-span-1 p-4 bg-emerald-50 rounded-lg shadow-inner">
+                        <h4 class="text-xl font-bold text-emerald-700 mb-3 border-b pb-2 border-emerald-200">
+                            <i class="fa-solid fa-mug-saucer mr-2"></i> Drinks (مشروبات)
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">ماء</p>
+                                <p class="text-sm text-gray-500">Ma'</p>
+                                <p class="font-semibold text-gray-700">Water</p>
+                            </div>
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">شاي</p>
+                                <p class="text-sm text-gray-500">Shay</p>
+                                <p class="font-semibold text-gray-700">Tea</p>
+                            </div>
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">قهوة</p>
+                                <p class="text-sm text-gray-500">Qahwa</p>
+                                <p class="font-semibold text-gray-700">Coffee</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Ordering & Adjectives -->
+                    <div class="col-span-1 p-4 bg-emerald-50 rounded-lg shadow-inner">
+                        <h4 class="text-xl font-bold text-emerald-700 mb-3 border-b pb-2 border-emerald-200">
+                            <i class="fa-solid fa-list-check mr-2"></i> Useful Phrases
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">أريد</p>
+                                <p class="text-sm text-gray-500">Ureed</p>
+                                <p class="font-semibold text-gray-700">I want / I would like</p>
+                            </div>
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">لذيذ</p>
+                                <p class="text-sm text-gray-500">Ladhidh</p>
+                                <p class="font-semibold text-gray-700">Delicious / Tasty</p>
+                            </div>
+                            <div class="vocabulary-card p-3 bg-white rounded-lg border border-emerald-300">
+                                <p class="text-xl font-arabic font-bold text-right text-emerald-900">كم الثمن؟</p>
+                                <p class="text-sm text-gray-500">Kam ath-thaman?</p>
+                                <p class="font-semibold text-gray-700">How much is it?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Example Sentences / Practical Application -->
+                <h3 class="text-2xl font-bold text-emerald-800 mb-4 pt-4 border-t border-emerald-200">
+                    Practical Application: Example Sentences
+                </h3>
+
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-white border-2 border-emerald-200 rounded-lg p-6">
+                    <div class="bg-white border-2 border-emerald-200 rounded-lg p-6 shadow-md">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="bg-emerald-100 p-3 rounded-lg">
                                 <i class="fa-solid fa-book text-emerald-600 text-xl"></i>
                             </div>
-                            <h4 class="font-bold text-lg">Example 1</h4>
+                            <h4 class="font-bold text-lg">Example 1: Ordering a Drink</h4>
                         </div>
-                        <p class="text-gray-600">Practice example content will be displayed here.</p>
+                        <!-- Arabic Example -->
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 rtl-scroll overflow-x-auto">
+                            <p class="text-xl font-arabic font-semibold text-right text-gray-900 mb-2">أريد كوب شاي من فضلك.</p>
+                        </div>
+                        <p class="text-gray-600 mt-2">
+                            <span class="font-medium text-emerald-700">Transliteration:</span> Ureed kub shay min fadlik.
+                        </p>
+                        <p class="text-gray-600">
+                            <span class="font-medium text-emerald-700">English:</span> I would like a cup of tea, please.
+                        </p>
                     </div>
                     
-                    <div class="bg-white border-2 border-emerald-200 rounded-lg p-6">
+                    <div class="bg-white border-2 border-emerald-200 rounded-lg p-6 shadow-md">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="bg-emerald-100 p-3 rounded-lg">
                                 <i class="fa-solid fa-pen text-emerald-600 text-xl"></i>
                             </div>
-                            <h4 class="font-bold text-lg">Example 2</h4>
+                            <h4 class="font-bold text-lg">Example 2: Commenting on Food</h4>
                         </div>
-                        <p class="text-gray-600">Additional practice content will be displayed here.</p>
+                        <!-- Arabic Example -->
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 rtl-scroll overflow-x-auto">
+                            <p class="text-xl font-arabic font-semibold text-right text-gray-900 mb-2">هذا الدجاج لذيذ جداً.</p>
+                        </div>
+                        <p class="text-gray-600 mt-2">
+                            <span class="font-medium text-emerald-700">Transliteration:</span> Hadha ad-dajaj ladhidh jiddan.
+                        </p>
+                        <p class="text-gray-600">
+                            <span class="font-medium text-emerald-700">English:</span> This chicken is very delicious.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Cultural Note -->
+        <!-- Cultural Note / New Cultural Section -->
         <section class="bg-white rounded-xl shadow-lg p-8 mb-8 border-l-4 border-gold-500">
             <div class="flex items-start gap-4">
                 <div class="bg-gold-100 p-3 rounded-lg">
-                    <i class="fa-solid fa-lightbulb text-gold-600 text-2xl"></i>
+                    <i class="fa-solid fa-bowl-food text-gold-600 text-2xl"></i>
                 </div>
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Helpful Tip</h2>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Cultural Insight: Hospitality</h2>
                     <p class="text-gray-700 leading-relaxed">
-                        Remember to practice regularly and review previous lessons. Consistency is key to mastering Arabic!
+                        In many Arabic-speaking cultures, hospitality surrounding food and drink is paramount. It is common to be offered tea or coffee immediately upon entering someone's home. When eating, remember that accepting food is a sign of respect and gratitude. Guests are often urged to eat more than they can!
                     </p>
                 </div>
             </div>
